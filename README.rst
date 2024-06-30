@@ -61,8 +61,8 @@ To build and run the application programs (``nghttp``, ``nghttpd``,
 ``nghttpx`` and ``h2load``) in the ``src`` directory, the following packages
 are required:
 
-* OpenSSL >= 1.1.1; or LibreSSL >= 3.8.1; or aws-lc >= 1.19.0; or
-  BoringSSL
+* OpenSSL >= 1.1.1; or wolfSSL >= 5.7.0; or LibreSSL >= 3.8.1; or
+  aws-lc >= 1.19.0; or BoringSSL
 * libev >= 4.11
 * zlib >= 1.2.3
 * libc-ares >= 1.7.5
@@ -125,9 +125,9 @@ following libraries are required:
 
 * `OpenSSL with QUIC support
   <https://github.com/quictls/openssl/tree/OpenSSL_1_1_1w+quic>`_; or
-  LibreSSL (does not support 0RTT); or aws-lc; or
+  wolfSSL; or LibreSSL (does not support 0RTT); or aws-lc; or
   `BoringSSL <https://boringssl.googlesource.com/boringssl/>`_ (commit
-  6ab7c1482bf4cdc91c87bc512aaf68ffb18975ec)
+  a220a6024f66c123019b5c080f6bd8bcaf75448c)
 * `ngtcp2 <https://github.com/ngtcp2/ngtcp2>`_ >= 1.4.0
 * `nghttp3 <https://github.com/ngtcp2/nghttp3>`_ >= 1.1.0
 
@@ -150,8 +150,8 @@ its executable.
 
 Compiling libnghttp2 C source code requires a C99 compiler.  gcc 4.8
 is known to be adequate.  In order to compile the C++ source code,
-C++20 compliant compiler is required.  At least g++ >= 1.12 and
-clang++ >= 1.15 are known to work.
+C++20 compliant compiler is required.  At least g++ >= 12 and
+clang++ >= 15 are known to work.
 
 .. note::
 
@@ -352,7 +352,7 @@ Build nghttp3:
 
 .. code-block:: text
 
-   $ git clone --depth 1 -b v1.3.0 https://github.com/ngtcp2/nghttp3
+   $ git clone --depth 1 -b v1.4.0 https://github.com/ngtcp2/nghttp3
    $ cd nghttp3
    $ git submodule update --init --depth 1
    $ autoreconf -i
@@ -365,7 +365,7 @@ Build ngtcp2:
 
 .. code-block:: text
 
-   $ git clone --depth 1 -b v1.5.0 https://github.com/ngtcp2/ngtcp2
+   $ git clone --depth 1 -b v1.6.0 https://github.com/ngtcp2/ngtcp2
    $ cd ngtcp2
    $ git submodule update --init --depth 1
    $ autoreconf -i
